@@ -1,2 +1,2 @@
-# NLP-
+# NLP++
  C++ Natural Language Processing Library
