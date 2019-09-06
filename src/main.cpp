@@ -7,6 +7,7 @@
 #include <algorithm>
 #include<iostream>
 #include<fstream>
+#include <vector>
 
 using namespace std;
 
@@ -87,10 +88,40 @@ string spellCheck(string dictionaryPath, string term)
 
 	return result;
 }
+
+vector<string> wordTokenization(string str, const char delimiter = ' ')
+{
+	string word = "";
+	vector<string> tokens;
+	for (auto x : str)
+	{
+		if (x == delimiter)
+		{
+			//cout << word << endl;
+			tokens.push_back(word);
+			word = "";
+		}
+		else
+		{
+			word = word + x;
+		}
+	}
+	tokens.push_back(word);
+	
+	return tokens;
+}
+
 int main()
 {
 	string term = "teliphone";
 	string out = spellCheck("dictionary.txt", term);
 	cout << "Term : " << term << " ,Correction : " << out << std::endl;
+
+	vector<string> tokens = wordTokenization("Achraf khazri from africa");
+
+	for (size_t i = 0; i < tokens.size(); i++)
+	{
+		cout<<tokens.at(i)<<endl;
+	}
 	return 0;
 }
