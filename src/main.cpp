@@ -89,7 +89,7 @@ string spellCheck(string dictionaryPath, string term)
 }
 int main()
 {
-	string term = "garagee";
+	string term = "teliphone";
 	string out = spellCheck("dictionary.txt", term);
 	cout << "Term : " << term << " ,Correction : " << out << std::endl;
 	return 0;
