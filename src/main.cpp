@@ -5,8 +5,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include<iostream>
-#include<fstream>
+#include <fstream>
 #include <vector>
 
 using namespace std;
@@ -92,6 +91,7 @@ string spellCheck(string dictionaryPath, string term)
 vector<string> wordTokenization(string str, const char delimiter = ' ')
 {
 	string word = "";
+	int ngrams = 0;
 	vector<string> tokens;
 	for (auto x : str)
 	{
@@ -111,17 +111,36 @@ vector<string> wordTokenization(string str, const char delimiter = ' ')
 	return tokens;
 }
 
-int main()
+vector<string> multiWordTokenization(string str, int grams, const char delimiter = ' ')
 {
-	string term = "teliphone";
+	int ngrams = 0;
+	vector<string> out;
+	vector<string> tokens = wordTokenization(str, delimiter);
+	string word;
+	for (size_t i = 0; i < tokens.size() - grams + 1; i++)
+	{
+		word = tokens.at(i);
+		for (size_t j = 1; j < grams; j++)
+		{
+			word = word + " " + tokens.at(i + j);
+		}
+		out.push_back(word);
+		
+	}
+
+	return out;
+}
+void main()
+{
+	string term = "garagee";
 	string out = spellCheck("dictionary.txt", term);
 	cout << "Term : " << term << " ,Correction : " << out << std::endl;
 
-	vector<string> tokens = wordTokenization("Achraf khazri from africa");
-
-	for (size_t i = 0; i < tokens.size(); i++)
+	vector<string> words = wordTokenization("Achraf khazri from africa");
+	vector<string> n_tokens = multiWordTokenization("Tokyo is the capital of Japan",2);
+	for (size_t i = 0; i < out.size(); i++)
 	{
-		cout<<tokens.at(i)<<endl;
+		cout<< n_tokens.at(i)<<endl;
 	}
-	return 0;
+
 }
