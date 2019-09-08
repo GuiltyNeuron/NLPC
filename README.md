@@ -2,5 +2,6 @@
  C++ Natural Language Processing Library
 
 Method :
-- Levenshtein distance and spell cheking
+- Spell cheking
 - Tokenization
+- Preprocess ( remove white spaces, remove numbers, remove special caraters, uppercase, lowercase)
