@@ -17,6 +17,7 @@ public:
 	string removePonctuation(string);
 	string removeNumbers(string);
 	string removeSpaces(string);
+	string replace(string, string, string);
 
 private:
 

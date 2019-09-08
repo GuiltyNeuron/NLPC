@@ -40,7 +40,8 @@ void main()
 	string pon = p.removePonctuation("hi** khazri !");
 	string n = p.removeNumbers("Achraf 1944 new york yankees1859748");
 	string s = p.removeSpaces("achraf    khazri");
-	cout << u << endl;
+	string r = p.replace("Hi ! Achraf !!!", "!", "9");
+	cout << r << endl;
 	cout << l << endl;
 	cout << s << endl;
 	cout << n << endl;

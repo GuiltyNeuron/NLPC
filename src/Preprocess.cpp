@@ -136,6 +136,36 @@ string Preprocess::removeSpaces(string text)
 	return outputText;
 }
 
+string Preprocess::replace(string inputText, string caracterToReplace, string caracterToReplaceWith)
+{
+	// Output text variable
+	string outputText = "";
+
+	// Boolean variable that indicate if a number was found or not
+	bool found;
+
+	// iterate through all caracters in the text
+	for (auto caracter : inputText)
+	{
+		// set no special caracter was found
+		found = false;
+
+		
+		// in case caracter was found found
+		if (caracter == *caracterToReplace.c_str())
+		{
+			found = true;
+			outputText = outputText + caracterToReplaceWith;
+		}
+		
+		else
+		{
+			outputText = outputText + caracter;
+		}
+	}
+	return outputText;
+}
+
 Preprocess::Preprocess()
 {
 
