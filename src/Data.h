@@ -17,7 +17,6 @@ public:
 	string readTxt(string);
 	string readPdf(string);
 	string readCsv(string);
-	
 
 private:
 
