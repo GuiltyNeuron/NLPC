@@ -12,7 +12,7 @@ class SpellCheck
 public:
 	SpellCheck();
 	~SpellCheck();
-	size_t uiLevenshteinDistance(const string &, const string &);
+	size_t levenshteinDistance(const string &, const string &);
 	string correct(string, string);
 
 private:

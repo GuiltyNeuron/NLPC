@@ -5,7 +5,7 @@
 
 #include "SpellCheck.h"
 
-size_t SpellCheck::uiLevenshteinDistance(const string &s1, const string &s2)
+size_t SpellCheck::levenshteinDistance(const string &s1, const string &s2)
 {
 	const size_t m(s1.size());
 	const size_t n(s2.size());
@@ -67,7 +67,7 @@ string SpellCheck::correct(string dictionaryPath, string term)
 		while (getline(file, line)) {
 
 			// compute Levenshtein distance
-			score = uiLevenshteinDistance(term, line.c_str());
+			score = levenshteinDistance(term, line.c_str());
 
 			// In case score is better than the previous one change the output
 			if (score < out)
