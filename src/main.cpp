@@ -5,6 +5,7 @@
 #include "SpellCheck.h"
 #include "Tokenization.h"
 #include "Preprocess.h"
+#include "Data.h"
 #include <iostream>
 
 using namespace std;
@@ -44,4 +45,10 @@ void main()
 	cout << s << endl;
 	cout << n << endl;
 	cout << pon << endl;
+
+	// Data class
+	Data d = Data();
+	string txtfile = d.readTxt("test.txt");
+	cout << txtfile << endl;
+
 }

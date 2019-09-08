@@ -7,8 +7,22 @@
 #include "Data.h"
 
 string Data::readTxt(string inputFilePath)
-{
-	return "";
+{	
+	// Load the dictionary
+	ifstream file(inputFilePath);
+
+	string outputText = "";
+	// Read the dictionary
+	if (file.is_open())
+	{
+		std::string line;
+		while (getline(file, line))
+		{
+			outputText = outputText + line.c_str() + " ";
+		}
+	}
+	file.close();
+	return outputText;
 }
 
 string Data::readPdf(string inputFilePath)
