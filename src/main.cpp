@@ -10,8 +10,8 @@
 
 using namespace std;
 
-void main()
-{	
+auto main()->int{	
+	
 	// Spell Cheking example
 	SpellCheck sc = SpellCheck();
 	string term = "garagee";
